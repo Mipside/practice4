@@ -12,9 +12,7 @@ public class Part3 {
     private static final String ENCODING = "CP1251";
     private static final String STOP = "stop";
 
-    // public static final String pint = "(?m)(\\s\\b\\d+\\s\\d*)";
     public static final String pint = "(?m)(\\s\\b\\d+\\s)";
-    // public static final String pdoub = "(?m)([+-]?(\\d*[.]).?\\d+)";
     public static final String pdoub = "(?m)(\\.\\d\\d|\\d+\\.\\d+|\\d+\\.)";
     public static final String pch = "(?m)(?U)(\\b\\w\\s)";
     public static final String pstr = "(?U)(?m)([a-zA-zа-яА-Я]\\w{1,})";
@@ -28,23 +26,15 @@ public class Part3 {
         }
         scanner.close();
 
-        //  System.out.println(sb.toString().trim());
         return sb.toString().trim();
-        //   } catch (IOException ex) {
-        //       ex.printStackTrace();
-        //  }
-        //   return sb.toString();
     }
 
     public static String getData(String text, String reg) {
         String s = text;
         StringBuffer sb = new StringBuffer();
-        //   System.out.println(s);
         Pattern p = Pattern.compile(reg);
         Matcher m = p.matcher(s);
         while (m.find()) {
-            // outS = m.group(1);
-            //  sb.append(outS);
             sb.append(m.group(1) + " ");
         }
         return sb.toString();
