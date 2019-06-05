@@ -19,7 +19,6 @@ public class Part3 {
 
     public static String getInput(String fileName) throws IOException {
         StringBuilder sb = new StringBuilder();
-        //    try {
         Scanner scanner = new Scanner(new File(fileName), ENCODING);
         while (scanner.hasNextLine()) {
             sb.append(scanner.nextLine()).append(System.lineSeparator());
