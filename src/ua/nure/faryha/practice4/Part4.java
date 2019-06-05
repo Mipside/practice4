@@ -10,8 +10,6 @@ import java.util.Iterator;
 
 public class Part4 implements Iterable {
 
-
-    // public static final String p41 = "(?m)(?U)([A-Z]{1}[\\w\\d\\s\\-\\,]+[\\.\\!\\?]{1})";
     public static final String p41 = "(?m)(?U)([A-ZА-Я].+\\.)";
     private static final String ENCODING = "CP1251";
 
@@ -45,21 +43,12 @@ public class Part4 implements Iterable {
 
     public static String getInput(String fileName) throws IOException {
         StringBuilder sb = new StringBuilder();
-        //    try {
         Scanner scanner = new Scanner(new File(fileName), ENCODING);
         while (scanner.hasNextLine()) {
             sb.append(scanner.nextLine()).append(System.lineSeparator());
         }
         scanner.close();
-        //1 System.out.println(sb.toString().replaceAll("\\n|\\r\\n", " " ).replaceAll("\\.\\s", "\\.\n"));
-        //2     return sb.toString().trim();
-
         return sb.toString().replaceAll("\\r\\n", " ").replaceAll("\\.\\s", ".\n").replaceAll("\\s\\s", " ").trim();
-
-        //    } catch (IOException ex) {
-        //       ex.printStackTrace();
-        //   }
-        //   return sb.toString();
     }
 
 
