@@ -49,7 +49,7 @@ public class Part2 {
         FileInputStream fio = new FileInputStream("part2.txt");
         //input data to String
         Scanner sc = new Scanner(fio).useDelimiter("\\A");
-        String result; // = sc.hasNext() ? sc.next() : "";
+        String result;
         if(sc.hasNext()){
             result = sc.next();
         }
@@ -57,14 +57,11 @@ public class Part2 {
         //  String to int massive
         String strMass[] = result.split(" ");
         int numMass[] = new int[strMass.length];
-        //  System.out.println(result);
         for (int i = 0; i < strMass.length; i++) {
             numMass[i] = Integer.parseInt(strMass[i]);
-            //      System.out.println(numMass[i]);
         }
         //  sorting massive
         Arrays.sort(numMass);
-        //    System.out.println(Arrays.toString(numMass));
         //    writing massive to part2_sorted.txt
         FileWriter fw2 = new FileWriter("part2_sorted.txt");
         fw2.write(Arrays.toString(numMass).replaceAll("\\[", "").replaceAll("\\]", "").replaceAll("\\,", ""));
